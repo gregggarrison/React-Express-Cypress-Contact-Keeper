@@ -11,7 +11,7 @@ const ContactFilter = () => {
         if (filtered === null) {
             text.current.value = '';
         }
-    })
+    });
 
     const onChange = (e) => {
         if (text.current.value !== '') {
@@ -19,12 +19,13 @@ const ContactFilter = () => {
         } else {
             clearFilter();
         }
-    }
+    };
+
     return (
         <form>
             <input ref={text} placeholder="Filter Contacts..." onChange={onChange} type="text" />
         </form>
-    )
-}
+    );
+};
 
-export default ContactFilter
+export default ContactFilter;

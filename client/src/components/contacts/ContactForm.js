@@ -3,7 +3,6 @@ import ContactContext from '../../context/contact/contactContext';
 
 const ContactForm = () => {
     const contactContext = useContext(ContactContext);
-
     const { addContact, updateContact, current, clearCurrent } = contactContext;
 
     useEffect(() => {
@@ -15,7 +14,7 @@ const ContactForm = () => {
                 email: '',
                 phone: '',
                 type: 'personal'
-            })
+            });
         }
     }, [contactContext, current]);
 
@@ -32,7 +31,6 @@ const ContactForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
         if (current === null) {
             addContact(contact);
         } else {
@@ -105,4 +103,4 @@ const ContactForm = () => {
     );
 };
 
-export default ContactForm
+export default ContactForm;
