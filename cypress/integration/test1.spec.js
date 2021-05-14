@@ -15,7 +15,6 @@ describe('Our first suite', () => {
         onHomePage.addNewContact('Steve Smith', 'ssmith@mail.com', '433-456-7890')
         onHomePage.addNewContact('John Doe', 'jdoe@mail.com', '123-456-7890')
         onHomePage.addNewContact('Mary Bridget', 'mbridget@mail.com', '123-456-7890')
-        cy.wait(2000)
         onLoginPage.logout();
     })
 
