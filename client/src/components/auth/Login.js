@@ -46,7 +46,7 @@ const Login = (props) => {
             <h1>
                 <span className="text-primary">Account Login</span>
             </h1>
-            <form onSubmit={onSubmit}>
+            <form id="cy-loginForm" onSubmit={onSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email Address</label>
                     <input

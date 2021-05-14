@@ -44,7 +44,7 @@ const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form id="contact-form" onSubmit={onSubmit}>
             <h2 className="text-primary">{current ? 'Update Contact' : 'Add Contact'}</h2>
             <input
                 type="text"

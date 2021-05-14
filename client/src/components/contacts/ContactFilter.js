@@ -22,7 +22,7 @@ const ContactFilter = () => {
     };
 
     return (
-        <form>
+        <form id="cy-contact-filter">
             <input ref={text} placeholder="Filter Contacts..." onChange={onChange} type="text" />
         </form>
     );

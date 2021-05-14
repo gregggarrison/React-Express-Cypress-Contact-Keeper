@@ -17,7 +17,7 @@ const Home = () => {
             <div>
                 <ContactForm />
             </div>
-            <div>
+            <div id="cy-contacts-container">
                 <ContactFilter />
                 <Contacts />
             </div>

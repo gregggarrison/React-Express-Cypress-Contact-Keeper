@@ -19,7 +19,7 @@ const Contacts = () => {
     };
 
     return (
-        <>
+        <div className="cy-contacts">
             {
                 contacts !== null && !loading
                     ? (
@@ -47,7 +47,7 @@ const Contacts = () => {
                     )
                     : <Spinner />
             }
-        </>
+        </div>
     );
 };
 
