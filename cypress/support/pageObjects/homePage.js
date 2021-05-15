@@ -1,20 +1,20 @@
 
 export class HomePage {
+
     addNewContact(name, email, phone) {
-        
         cy.get('form').first().then(newContactForm => {
-            cy.server()
-            cy.route('POST', '**/contacts').as('postContacts')
+            cy.intercept('POST', '**/contacts').as('postContacts');
+
             cy.wrap(newContactForm).find('input[placeholder="Name"]').type(name)
             cy.wrap(newContactForm).find('input[placeholder="Email"]').type(email)
             cy.wrap(newContactForm).find('input[placeholder="Phone"]').type(phone)
             cy.wrap(newContactForm).find('.btn').click()
-
+            cy.wait(100)
             
             cy.wait('@postContacts')
             cy.get('@postContacts').then(xhr => {
                 console.log(xhr)
-                expect(xhr.status).to.equal(200)
+                expect(xhr.response.statusCode).to.equal(200)
                 expect(xhr.request.body.name).to.equal(name)
                 expect(xhr.request.body.email).to.equal(email)
                 expect(xhr.request.body.phone).to.equal(phone)

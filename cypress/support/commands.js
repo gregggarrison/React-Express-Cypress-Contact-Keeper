@@ -1,3 +1,6 @@
+import { onLoginPage } from '../support/pageObjects/loginPage'
+
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,6 +26,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('openHomePage', () => {
+Cypress.Commands.add('openHomePageAndLogin', () => {
     cy.visit('/');
+    onLoginPage.submitLoginFormValidCredentials('g.garrison@me.com', 'password')
+    cy.wait(2000)
+})
+
+Cypress.Commands.add('logout', () => {
+    onLoginPage.logout()
 })
