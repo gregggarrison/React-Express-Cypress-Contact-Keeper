@@ -11,11 +11,13 @@ describe('Our first suite', () => {
         cy.logout();
     })
 
-    it('once user logged in add a new contact and submit', () => {
-        onHomePage.addNewContact('Tim Taylor', 'ttaylor@mail.com', '123-456-7890')
-        onHomePage.addNewContact('Steve Smith', 'ssmith@mail.com', '433-456-7890')
-        onHomePage.addNewContact('John Doe', 'jdoe@mail.com', '123-456-7890')
-        onHomePage.addNewContact('Mary Bridget', 'mbridget@mail.com', '123-456-7890')
+    it('once user logged in add a new contacts -> submit -> filter', () => {
+        onHomePage.addNewContact('Tim Taylor', 'ttaylor@mail.com', '123-456-7890','professional')
+        onHomePage.addNewContact('Steve Smith', 'ssmith@mail.com', '433-456-7890', 'personal')
+        onHomePage.addNewContact('John Doe', 'jdoe@mail.com', '123-456-7890', 'professional')
+        onHomePage.addNewContact('Mary Bridget', 'mbridget@mail.com', '123-456-7890','personal')
+
+        onHomePage.filterContacts('doe')
     })
 
     it('update contact name by name', () => {
