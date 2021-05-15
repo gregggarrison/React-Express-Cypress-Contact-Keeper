@@ -1,21 +1,17 @@
 
 export class HomePage {
-
     addNewContact(name, email, phone, type) {
         cy.get('form').first().then(newContactForm => {
             cy.intercept('POST', '**/contacts').as('postContacts');
-
             cy.wrap(newContactForm).find('input[placeholder="Name"]').type(name)
             cy.wrap(newContactForm).find('input[placeholder="Email"]').type(email)
             cy.wrap(newContactForm).find('input[placeholder="Phone"]').type(phone)
-
-            if(type === 'professional'){
+            if (type === 'professional') {
                 cy.wrap(newContactForm).find('input[value="professional"]').click()
             }
-
             cy.wrap(newContactForm).find('.btn').click()
-            cy.wait(100)
-            
+            //********* ASK SOMEONE ABOUT THIS???  it doesn't work without cy.wait...supposed to wait for '@postContacts' */
+            cy.wait(50)
             cy.wait('@postContacts')
             cy.get('@postContacts').then(xhr => {
                 console.log(xhr)
@@ -28,10 +24,10 @@ export class HomePage {
         cy.get('.card').contains('h3', name).should('contain', name)
     }
 
-    filterContacts(text){
+    filterContacts(text) {
         cy.get('form').eq(1).type(text)
         cy.wait(2000)
-        cy.get('.card').find('h3').should('contain','John Doe')
+        cy.get('.card').find('h3').should('contain', 'John Doe')
     }
 
     updateContactName(name, newName) {
@@ -44,7 +40,6 @@ export class HomePage {
             cy.wrap(updateContactForm).find('[name="name"]').clear().type(newName)
             cy.wrap(updateContactForm).find('.btn').first().click()
         })
-
         cy.wait('@putContact')
         cy.get('@putContact').then(xhr => {
             console.log(xhr)
@@ -61,7 +56,6 @@ export class HomePage {
             cy.wrap(contact).find('button').eq(1).click()
         })
     }
-
 }
 
 export const onHomePage = new HomePage();

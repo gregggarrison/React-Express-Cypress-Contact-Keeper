@@ -8,7 +8,8 @@ export class LoginPage {
             expect(logout.text()).to.equal('Logout')
         })
     }
-    logout(){
+
+    logout() {
         cy.get('[id="cy-logout"]').click()
     }
 }

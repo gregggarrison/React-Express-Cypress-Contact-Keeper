@@ -27,9 +27,22 @@ import { onLoginPage } from '../support/pageObjects/loginPage'
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('openHomePageAndLogin', () => {
-    cy.visit('/');
-    onLoginPage.submitLoginFormValidCredentials('g.garrison@me.com', 'password')
-    cy.wait(2000)
+
+    const userCredentials = {
+        "email": "g.garrison@me.com",
+        "password": "password"
+    }
+
+    cy.request('POST', 'http://localhost:3000/api/auth', userCredentials)
+        .its('body').then(body => {
+            const token = body.token
+            cy.wrap(token).as('token')
+            cy.visit('/', {
+                onBeforeLoad(win) {
+                    win.localStorage.setItem('token', token)
+                }
+            })
+        })
 })
 
 Cypress.Commands.add('logout', () => {
