@@ -2,5 +2,11 @@
     "baseUrl": "http://localhost:3000/",
     "ignoreTestFiles": "**/examples/*",
     "viewportHeight": 1080,
-    "viewportWidth": 1920
+    "viewportWidth": 1920,
+    "env": {
+        "RETRIES": 2,
+        "email": "g.garrison@me.com",
+        "password": "password"
+    }
+
 }

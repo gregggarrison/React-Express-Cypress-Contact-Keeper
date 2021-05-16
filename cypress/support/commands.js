@@ -29,8 +29,8 @@ import { onLoginPage } from '../support/pageObjects/loginPage'
 Cypress.Commands.add('openHomePageAndLogin', () => {
 
     const userCredentials = {
-        "email": "g.garrison@me.com",
-        "password": "password"
+        "email": Cypress.env("email"),
+        "password": Cypress.env("password")
     }
 
     cy.request('POST', 'http://localhost:3000/api/auth', userCredentials)
