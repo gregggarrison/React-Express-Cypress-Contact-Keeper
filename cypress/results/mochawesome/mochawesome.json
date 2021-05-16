@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-05-16T20:29:04.702Z",
+    "end": "2021-05-16T20:29:22.157Z",
+    "duration": 17455,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c73140b9-6f87-40a6-a9fd-4906332ef8bd",
+      "title": "",
+      "fullFile": "cypress/integration/test1.spec.js",
+      "file": "cypress/integration/test1.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2a1708af-4219-4f36-b4eb-5d5878b54c68",
+          "title": "generic testing suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "once user logged in add a new contacts -> submit -> filter",
+              "fullTitle": "generic testing suite once user logged in add a new contacts -> submit -> filter",
+              "timedOut": null,
+              "duration": 14483,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homePage.onHomePage.addNewContact('Tim Taylor', 'ttaylor@mail.com', '123-456-7890', 'professional');\n_homePage.onHomePage.addNewContact('Steve Smith', 'ssmith@mail.com', '433-456-7890', 'personal');\n_homePage.onHomePage.addNewContact('John Doe', 'jdoe@mail.com', '123-456-7890', 'professional');\n_homePage.onHomePage.addNewContact('Mary Bridget', 'mbridget@mail.com', '123-456-7890', 'personal');\n_homePage.onHomePage.filterContacts('doe');\ncy.logout();",
+              "err": {},
+              "uuid": "d162ce87-5b34-4d63-9a4f-62d896a9678b",
+              "parentUUID": "2a1708af-4219-4f36-b4eb-5d5878b54c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update contact name by name",
+              "fullTitle": "generic testing suite update contact name by name",
+              "timedOut": null,
+              "duration": 1714,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homePage.onHomePage.updateContactName('Tim Taylor', 'Timm Taylor');\ncy.logout();",
+              "err": {},
+              "uuid": "9b5d1749-2802-4b77-854b-9e0581d7148b",
+              "parentUUID": "2a1708af-4219-4f36-b4eb-5d5878b54c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete a contact by contact name",
+              "fullTitle": "generic testing suite delete a contact by contact name",
+              "timedOut": null,
+              "duration": 1198,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_homePage.onHomePage.deleteContact('Timm Taylor');\n_homePage.onHomePage.deleteContact('Steve Smith');\n_homePage.onHomePage.deleteContact('John Doe');\n_homePage.onHomePage.deleteContact('Mary Bridget');",
+              "err": {},
+              "uuid": "14f3fa75-4055-4796-b0a1-37eb4f97344d",
+              "parentUUID": "2a1708af-4219-4f36-b4eb-5d5878b54c68",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d162ce87-5b34-4d63-9a4f-62d896a9678b",
+            "9b5d1749-2802-4b77-854b-9e0581d7148b",
+            "14f3fa75-4055-4796-b0a1-37eb4f97344d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17395,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

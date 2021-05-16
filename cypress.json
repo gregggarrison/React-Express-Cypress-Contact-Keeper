@@ -3,8 +3,13 @@
     "ignoreTestFiles": "**/examples/*",
     "viewportHeight": 1080,
     "viewportWidth": 1920,
+    "video": true,
+    "reporter": "cypress-multi-reporters",
+        "reporterOptions": {
+            "configFile": "reporter-config.json"
+        },
     "env": {
-        "RETRIES": 2,
+        "RETRIES": 1,
         "email": "g.garrison@me.com",
         "password": "password"
     }

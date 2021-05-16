@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<testsuites>
+<testsuite name="Root Suite" timestamp="2021-05-16T20:29:04" tests="0" file="cypress/integration/test1.spec.js" time="0.0000" failures="0"></testsuite>
+<testsuite name="generic testing suite" timestamp="2021-05-16T20:29:04" tests="3" time="17.3950" failures="0">
+  
+  <testcase name="generic testing suite once user logged in add a new contacts -&gt; submit -&gt; filter" time="14.4830" classname="once user logged in add a new contacts -&gt; submit -&gt; filter"></testcase>
+  
+  <testcase name="generic testing suite update contact name by name" time="1.7140" classname="update contact name by name"></testcase>
+  
+  <testcase name="generic testing suite delete a contact by contact name" time="1.1980" classname="delete a contact by contact name"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2021-05-16T20:29:35" tests="0" file="cypress/integration/test2.spec.js" time="0.0000" failures="0"></testsuite>
+<testsuite name="registering a new user" timestamp="2021-05-16T20:29:35" tests="2" time="4.3670" failures="0">
+  
+  <testcase name="registering a new user goes to home page and click&apos;s register and signs up" time="2.5280" classname="goes to home page and click&apos;s register and signs up"></testcase>
+  
+  <testcase name="registering a new user an existing user trys to register then goes to login page and logs in" time="1.8390" classname="an existing user trys to register then goes to login page and logs in"></testcase>
+  
+</testsuite>
+
+</testsuites>

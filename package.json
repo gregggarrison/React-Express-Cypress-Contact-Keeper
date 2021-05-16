@@ -9,7 +9,15 @@
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "delete:reports": "rm -R cypress/results/* || true",
+    "prereport": "npm run delete:reports",
+    "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
+    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
+    "cypress:run": "npm run prereport && npx cypress run",
+    "cypress:run_qa": "npx cypress run --env configFile=qa",
+    "cypress:e2e": "npm run dev & npm run cypress:run; npm run junit:merge; npm run mochawesome:merge",
+    "cypress:cy": "npm run cypress:run; npm run junit:merge; npm run mochawesome:merge"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +33,11 @@
   "devDependencies": {
     "concurrently": "^6.1.0",
     "cypress": "^7.3.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0",
     "nodemon": "^2.0.7"
   }
 }

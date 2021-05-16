@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-05-16T20:29:35.215Z",
+    "end": "2021-05-16T20:29:39.611Z",
+    "duration": 4396,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6f0b8bd5-a596-4f0b-a1a8-5cb04df24d3c",
+      "title": "",
+      "fullFile": "cypress/integration/test2.spec.js",
+      "file": "cypress/integration/test2.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0c178329-cc07-4880-9e63-9350bcce098a",
+          "title": "registering a new user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "goes to home page and click's register and signs up",
+              "fullTitle": "registering a new user goes to home page and click's register and signs up",
+              "timedOut": null,
+              "duration": 2528,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('form div input[name=\"name\"]').type('Mary Larry');\ncy.get('form div input[name=\"email\"]').type('mlary@mail.com');\ncy.get('form div input[name=\"password\"]').type('password');\ncy.get('form div input[name=\"password2\"]').type('password');\ncy.get('input[value=\"Register\"]').click();",
+              "err": {},
+              "uuid": "12ac58d7-b5c7-4abb-8352-e5714cf3ee4f",
+              "parentUUID": "0c178329-cc07-4880-9e63-9350bcce098a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "an existing user trys to register then goes to login page and logs in",
+              "fullTitle": "registering a new user an existing user trys to register then goes to login page and logs in",
+              "timedOut": null,
+              "duration": 1839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('form div input[name=\"name\"]').type('Mary Larry');\ncy.get('form div input[name=\"email\"]').type('mlary@mail.com');\ncy.get('form div input[name=\"password\"]').type('password');\ncy.get('form div input[name=\"password2\"]').type('password');\ncy.get('input[value=\"Register\"]').click();\ncy.get('.alert').should('contain', 'User already exists');",
+              "err": {},
+              "uuid": "0d3fa1f4-00a1-420c-8d0b-78fc5f1f0c10",
+              "parentUUID": "0c178329-cc07-4880-9e63-9350bcce098a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "12ac58d7-b5c7-4abb-8352-e5714cf3ee4f",
+            "0d3fa1f4-00a1-420c-8d0b-78fc5f1f0c10"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4367,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
